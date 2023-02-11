@@ -1,0 +1,57 @@
+<div class="modal-body">
+  <div class="row">
+    <ng-container *ngFor="let event of events">
+      <div class="col-6 mt-4">
+        <div class="for-group">
+          <label>Title</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="event.title"
+            (keyup)="refresh.next()"
+          />
+        </div>
+      </div>
+      <div class="col-6 mt-4">
+        <div class="for-group">
+          <label>Class Date</label>
+          <input
+            class="form-control"
+            type="text"
+            mwlFlatpickr
+            [(ngModel)]="event.start"
+            (ngModelChange)="refresh.next()"
+            [altInput]="true"
+            [convertModelValue]="true"
+            [enableTime]="true"
+            dateFormat="Y-m-dTH:i"
+            altFormat="F j, Y H:i"
+            placeholder="Not set"
+          />
+        </div>
+      </div>
+      <div class="col-6 mt-4">
+        <div class="for-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="event.title"
+            (keyup)="refresh.next()"
+          />
+        </div>
+      </div>
+      <div class="col-6 mt-4">
+        <div class="for-group">
+          <label>
+          </label>
+          <ng-select
+            [items]="exampleData"
+            bindLabel="name"
+            [multiple]="true">
+          </ng-select>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
